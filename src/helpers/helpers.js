@@ -5,18 +5,20 @@ export function showNotification(setter) {
   }, 2000);
 }
 
+ // setter upućuje na neku setFunkciju
+ 
 export function checkWin(correct, wrong, word) {
-  let status = 'win';
+  let status = 'win'; // ako smo pobedili
 
   // Check for win
   word.split('').forEach(letter => {
     if(!correct.includes(letter)){
-      status = '';
+      status = ''; //ne znači ni da smo pobedili, niti izgubili
     }
   });
   
   // Check for lose
-  if(wrong.length === 6) status = 'lose';
+  if(wrong.length === 6) status = 'lose'; // ako smo izgubilisis
 
   return status
 }

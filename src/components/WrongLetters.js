@@ -6,7 +6,7 @@ const WrongLetters = ({ wrongLetters }) => {
     <div className="wrong-letters-container">
       <div>
         {wrongLetters.length > 0 && 
-          <p>Wrong</p>
+          <p>Pogrešna slova koja ste uneli:</p>
         }
         {wrongLetters
           .map((letter, i) => <span key={i}>{letter}</span>)
@@ -15,5 +15,7 @@ const WrongLetters = ({ wrongLetters }) => {
     </div>
   )
 }
+
+// .reduce((prev, curr) => koristimo ga da bi dodao zarez između svakog span-a
 
 export default WrongLetters

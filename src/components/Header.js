@@ -4,8 +4,8 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <h1>Hangman</h1>
-      <p>Find the hidden word - Enter a letter</p>
+      <h1>Vešalo zanimljiva geografija</h1>
+      <p>Pronađite zakonetnu državu - Unesite slovo</p>
     </>
   )
 }

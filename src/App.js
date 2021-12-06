@@ -9,7 +9,7 @@ import { showNotification as show, checkWin } from './helpers/helpers';
 
 import './App.css';
 
-const words = ['application', 'programming', 'interface', 'wizard'];
+const words = ['srbija', 'egipat', 'austrija', 'brazil','angola','francuska','slovenija','kina','madagaskar','tajland','danska','portugal','gana','argentina','meksiko','kanada','holandija','argentina','japan'];
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 function App() {
@@ -38,10 +38,15 @@ function App() {
         }
       }
     }
-    window.addEventListener('keydown', handleKeydown);
-
-    return () => window.removeEventListener('keydown', handleKeydown);
+    window.addEventListener('keydown', handleKeydown); 
+    // kad pritisnemo bilo koje dugme na tasturi(type=kyedown) pokrenuće se handleKeydown
+  
+     return () => window.removeEventListener('keydown', handleKeydown);
   }, [correctLetters, wrongLetters, playable]);
+
+  // Da nismo dodalu u 44.oj liniji koda [correctLetters, wrongLetters, playable], useEffect bi se pozvao svaki
+  // put kad se app renderuje, zato smo dodali zavisnosti (correctLetters, wrongLetters, playable) pa svaki put
+  // kad se one update-uju, funkcija će se pozvati
 
   function playAgain() {
     setPlayable(true);

@@ -7,14 +7,15 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
   let playable = true;
 
   if( checkWin(correctLetters, wrongLetters, selectedWord) === 'win' ) {
-    finalMessage = 'Congratulations! You won! 😃';
+    finalMessage = 'Čestitamo! Pobedili ste i osvojili vaučer za Kopaonik! 😃';
     playable = false;
   } else if( checkWin(correctLetters, wrongLetters, selectedWord) === 'lose' ) {
-    finalMessage = 'Unfortunately you lost. 😕';
-    finalMessageRevealWord = `...the word was: ${selectedWord}`;
+    finalMessage = 'Nažalost, izgubili ste! Pokušajte ponovo! 😕';
+    finalMessageRevealWord = `...zagonetna država je bila: ${selectedWord}`;
     playable = false;
   }
 
+  // ovde nema nikakvih zavisnosti, samo želimo da se ovo run-uje svaki put kad unesemo slovo! 
   useEffect(() => {
     setPlayable(playable);
   });
